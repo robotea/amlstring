@@ -16,6 +16,12 @@ Typical usage is very simple...
     std::stringstream stream;
     stream << texts[1];
 
+## How it works
+
+Look! Only one move instruction! 
+
+![AMLString disassembly](/docs/AMLStringSpeed.png)
+
 ## Building AMLString
 
 ### Getting sources

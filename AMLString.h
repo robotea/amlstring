@@ -1,7 +1,7 @@
 /*!
 *   @file AMLString.h
 *   This file is interface for definition static stringtable with import functions from <b>.mo</b> files.
-*   For more informations, see @ref Strings.
+*
 *   @author Zdeněk Skulínek  &lt;<a href="mailto:zdenek.skulinek@seznam.cz">me@zdenekskulinek.cz</a>&gt;
 */
 #ifndef AMLSTRING_H
@@ -79,22 +79,40 @@ namespace AMCore {
     };
 
     using AMLStringBase = AMBasicConstString<char, std::char_traits<char>, AMLStringProvider>;
+    class _T_AM_String;
+    class _T_AM_StringItemBase;
 
+
+    /**
+     *  @ingroup Strings
+     *  @brief Object returned by "_" (add to localized table) function
+     */
     class AMLString: public AMLStringBase
     {
-    public:
         constexpr
         AMLString(const AMLStringProvider& provider) noexcept:
             AMLStringBase(provider) {}
+        friend class _T_AM_String;
+        friend class _T_AM_StringItemBase;
+    public:
 
+        /**
+         * @return original (parameter of _ function) string (const char*)
+         */
         constexpr
         const char* getOriginalString() const noexcept;
 
+        /**
+         * @return original (parameter of _ function) string length
+         */
         constexpr
         size_t getOriginalLength() const noexcept;
 
+        /**
+         * @return original (parameter of _ function) string (string_view)
+         */
         constexpr
-        std::string_view get_original_string() const noexcept;
+        std::string_view getOriginalStringView() const noexcept;
     };
 
     struct _T_AM_StringItemBase
@@ -200,7 +218,7 @@ namespace AMCore {
     }
 
     constexpr
-    std::string_view AMLString::get_original_string() const noexcept
+    std::string_view AMLString::getOriginalStringView() const noexcept
     {
         return std::string_view(_M_provider._M_string_item->getOriginalString(), _M_provider._M_string_item->getOriginalLength());
     }
@@ -235,38 +253,48 @@ namespace AMCore {
     _T_AM_StringList& _T_AM_StringItemWrapper<tableHash, chars...>::_M_table =
         _T_AM_StringListHolder<tableHash>::registerItem(static_cast<_T_AM_StringItemBase*>(&_M_static_item));
 
+    /*
+     *  @ingroup Strings
+     */
     class _T_AM_String
     {
         template<uint64_t tableHash, typename T, std::size_t... ints>
-        constexpr static _T_AM_StringItemBase* getTextImpl(T data, std::index_sequence<ints...> int_seq)
+        constexpr inline _T_AM_StringItemBase* getTextImpl(T data, std::index_sequence<ints...> int_seq)
         {
             constexpr const char* src = data();
             return _T_AM_StringItemWrapper<tableHash, (src[ints])...>::getTranslationObject();
         }
     public:
+
         template<typename T>
-        constexpr
-        static AMLString getTextImpl(T data)
+        constexpr inline AMLString getTextImpl(T data)
         {
-            _T_AM_StringItemBase* stringItem = _T_AM_String::getTextImpl< AMCEFNV1aAlgorithm::fnv1a64("default")>
+            _T_AM_StringItemBase* stringItem = getTextImpl< AMCEFNV1aAlgorithm::fnv1a64("default")>
                                                    (data, std::make_index_sequence<_T_AM_StringItemBase::ceLength(data())>{});
             AMLStringProvider provider(stringItem);
             return AMLString(provider);
         }
     };
 
-     /**
-     *  @def gettext
-     *  @brief Adds string to localization stringtable
-     *  @param string string
-     *  @returns translated string
-     */
+    template<typename T>
+    constexpr inline AMLString _T_AM_String_getTextImpl(T data)
+    {
+        _T_AM_String s;
+        return s.getTextImpl(data);
+    }
+
 
 }//namespace
 
-//#define gettext(string) AMCore::_T_AM_String::getTextImpl([]()constexpr{ return string;})
-#define _(string) AMCore::_T_AM_String::getTextImpl([]()constexpr{ return string;})
-//#define _L(string) AMCore::_T_AM_String<wchar_t>::getTextImpl([]()constexpr{ return string;})
+
+/**
+ *  @ingroup Strings
+ *  @brief Adds string to localization stringtable
+ *  @param string string
+ *  @returns translated string
+ */
+#define _(string) AMCore::_T_AM_String_getTextImpl([]()constexpr{ return string;})
+#define _L(string) AMCore::_T_AM_String<wchar_t>::getTextImpl([]()constexpr{ return string;})
 
 /** @} */
 

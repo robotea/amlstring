@@ -29,7 +29,7 @@ include_directories(dependencies dependencies/googletest/googletest/include depe
 
 #set(CMAKE_CXX_FLAGS --coverage)
 #set(CMAKE_CXX_FLAGS -fexceptions)
-configure_file(src/AMLStringConfig.h.in AMLstringConfig.h)
+configure_file(src/AMLStringConfig.h.in ../AMLStringConfig.h)
 
 add_library(AMLString SHARED
         src/AMLString.cpp

@@ -10,7 +10,7 @@ std::vector<std::vector<char> > g_translated_strings;
 
 TEST(AMLString, BasicTest) {
 
-    constexpr AMLString ppp =  _T_AM_String::getTextImpl([]()constexpr{ return "chuus";});
+    constexpr AMLString ppp =  _T_AM_String_getTextImpl([]()constexpr{ return "chuus";});
     EXPECT_STREQ(ppp.c_str(), "chuus");
     EXPECT_STREQ(_("welcome").c_str(), "welcome");
 
@@ -68,9 +68,9 @@ TEST(AMLString, BasicTest) {
     EXPECT_EQ(6, texts[1].size());
 
     EXPECT_STREQ("brown", texts[1].getOriginalString());
-    EXPECT_STREQ("brown", texts[1].get_original_string().data());
+    EXPECT_STREQ("brown", texts[1].getOriginalStringView().data());
     EXPECT_EQ(5, texts[1].getOriginalLength());
-    EXPECT_EQ(5, texts[1].get_original_string().size());
+    EXPECT_EQ(5, texts[1].getOriginalStringView().size());
 
     EXPECT_EQ(texts[0], "QUICK");
     EXPECT_EQ(texts[1], "BROWN_");
@@ -213,6 +213,13 @@ TEST(AMLString, FindTest) {
 
     EXPECT_EQ(4, mls.find_last_not_of("ABCDEFW"));
     EXPECT_EQ(2, mls.find_last_not_of("ABCDEFW", 3));
+}
+
+TEST(AMLString, SpeedDemo) {
+    printf("Start\n");
+    AMLString foxl = _("fox");
+    const char *foxc = foxl.c_str();
+    printf("%s\n", foxc);
 }
 
 int main(int argc, char **argv) {

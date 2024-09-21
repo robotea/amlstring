@@ -55,7 +55,7 @@ namespace AMCore {
 	    static const std::uint32_t prime32 = 0x01000193UL;
 	public:
 		/**
-		 *  @brief 64bit vatiant of FNV1a Algorithm
+		 *  @brief 64bit variant of FNV1a Algorithm
 		 *  @param input any null-terminated string
 		 *  @returns 64bit hash
 		 */
@@ -70,7 +70,7 @@ namespace AMCore {
 	        return hash;
 	    }
 		/**
-		 *  @brief 32bit vatiant of FNV1a Algorithm
+		 *  @brief 32bit variant of FNV1a Algorithm
 		 *  @param input any null-terminated string
 		 *  @returns 32bit hash
 		 */

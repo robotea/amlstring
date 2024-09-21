@@ -16,9 +16,15 @@
 #define D_INLINE constexpr
 #define D_NOEXCEPTION noexcept(true)
 
+/**
+ *  @ingroup Strings
+ *  @{
+ */
+
 namespace AMCore {
 
 /**
+ *  @ingroup Strings
  *  @class AMCStringProvider
  *  @brief AMCore::AMCStringProvider is a trivial implementation of string provider.
  *  It is used by AMBasicConstString if provider is not explicitly specified.
@@ -85,6 +91,7 @@ __sv_limit(size_t __size, size_t __pos, size_t __off) D_NOEXCEPTION
 }
 
 /**
+ *  @ingroup Strings
  *  @class AMBasicConstString
  *  @brief  A non-owning reference to a string.
  *
@@ -1275,5 +1282,7 @@ private:
     }
 
 } //namespace AMCore
+
+/** @} */
 
 #endif  // AMBASICCSTRING_H
