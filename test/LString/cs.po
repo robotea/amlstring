@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-02-10 20:13+0100\n"
+"PO-Revision-Date: 2021-02-10 20:14+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"X-Poedit-KeywordsList: _\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: test_AMLString.cpp:14
+msgid "welcome"
+msgstr ""
+
+#: test_AMLString.cpp:16
+msgid "quick"
+msgstr ""
+
+#: test_AMLString.cpp:16
+msgid "brown"
+msgstr ""
+
+#: test_AMLString.cpp:16
+msgid "fox"
+msgstr ""

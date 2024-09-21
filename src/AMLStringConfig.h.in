@@ -1,0 +1,3 @@
+// the configured options and settings for Tutorial
+#define AMLString_VERSION_MAJOR @AMLString_VERSION_MAJOR@
+#define AMLString_VERSION_MINOR @AMLString_VERSION_MINOR@
