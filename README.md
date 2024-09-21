@@ -22,6 +22,10 @@ Look! Only one move instruction!
 
 ![AMLString disassembly](/docs/AMLStringSpeed.png)
 
+## Documetation
+
+There are doxygen generated documentation [here on libandromeda.org](http://libandromeda.org/amlstring/latest/).
+
 ## Building AMLString
 
 ### Getting sources
@@ -59,11 +63,11 @@ make
 
 ## Licencing
 
-This library is under GNU GPL v3 licence. If you need business licence, don't hesitate to contact [me](mailto:zdenek.skulinek@robotea.com?subject=Lincence for AMException).
+This library is under GNU GPL v3 licence. If you need business licence, don't hesitate to contact [me](mailto:zdenek.skulinek@robotea.com?subject=Licence for AMException).
 
 ## Contribute
 
-Please contact [me](mailto:zdenek.skulinek@robotea.com?subject=Lincence for AMException).
+Please contact [me](mailto:zdenek.skulinek@robotea.com?subject=Licence for AMException).
 
 ## Dependencies
 

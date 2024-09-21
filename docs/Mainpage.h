@@ -16,6 +16,63 @@
  *
  * \image html AMLStringSpeed.png "AMLString disassembly"
  *
+ * Sources
+ * =======
  *
+ * Download at [GitHUB](https://github.com/robotea/amlstring)
  *
+ * Building AMLString
+ * ==================
+ *
+ * Getting sources
+ * ---------------
+ *
+ * \code
+ * git submodule update
+ * \endcode
+ *
+ * Compiling
+ * ---------
+ *
+ * \code
+ * mkdir cmake-build-debug
+ *
+ * cd cmake-build-debug
+ *
+ * cmake ..
+ *
+ * make
+ * \endcode
+ *
+ * Output Library
+ * --------------
+ *
+ * \code
+ * /lib/libAMLString.so
+ * \endcode
+ *
+ * Single test (not necessary)
+ * ---------------------------
+ *
+ * \code
+ *
+ * ./TEST_AMFNV1a
+ *
+ * ./TEST_AMLString
+ * \endcode
+ *
+ * Licencing
+ * =========
+ *
+ * This library is under GNU GPL v3 licence. If you need business licence, don't hesitate to contact [me](mailto:zdenek.skulinek@robotea.com?subject=Licence for AMException).
+ *
+ * Contribute
+ * ==========
+ *
+ * Please contact [me](mailto:zdenek.skulinek@robotea.com?subject=Licence for AMException).
+ *
+ * Dependencies
+ * ============
+ *
+ * 1, [Google test](https://github.com/google/googletest.git)
  */
