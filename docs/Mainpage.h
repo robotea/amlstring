@@ -61,15 +61,15 @@
  * ./TEST_AMLString
  * \endcode
  *
- * Licencing
+ * License
  * =========
  *
- * This library is under GNU GPL v3 licence. If you need business licence, don't hesitate to contact [me](mailto:zdenek.skulinek@robotea.com?subject=Licence for AMException).
+ * This library is under GNU GPL v3 license. If you need business license, don't hesitate to contact [me](mailto:zdenek.skulinek@robotea.com?subject=License for AMException).
  *
  * Contribute
  * ==========
  *
- * Please contact [me](mailto:zdenek.skulinek@robotea.com?subject=Licence for AMException).
+ * Please contact [me](mailto:zdenek.skulinek@robotea.com?subject=License for AMException).
  *
  * Dependencies
  * ============
