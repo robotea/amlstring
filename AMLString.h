@@ -9,7 +9,7 @@
 
 #include <utility>
 #include "AMBasicCString.h"
-#include "AMCEFNV1a.h"
+#include "amfnv1a/AMCEFNV1a.h"
 
 /**
  *  @ingroup Strings

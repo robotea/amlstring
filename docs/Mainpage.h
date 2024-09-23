@@ -55,9 +55,6 @@
  * ---------------------------
  *
  * \code
- *
- * ./TEST_AMFNV1a
- *
  * ./TEST_AMLString
  * \endcode
  *
@@ -74,5 +71,6 @@
  * Dependencies
  * ============
  *
- * 1, [Google test](https://github.com/google/googletest.git)
+ * - [Google test](https://github.com/google/googletest.git)
+ * - [FNV1a hash algorithm](https://github.com/robotea/amfnv1a.git)
  */

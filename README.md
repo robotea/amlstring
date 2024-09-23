@@ -56,8 +56,6 @@ make
 ### Single test (not necessary)
 
 ```bash
-./TEST_AMFNV1a
-
 ./TEST_AMLString
 ```
 
@@ -71,4 +69,5 @@ Please contact [me](mailto:zdenek.skulinek\@robotea.com\?subject\=License%20for%
 
 ## Dependencies
 
-1. [Google test](https://github.com/google/googletest.git)
+- [Google test](https://github.com/google/googletest.git)
+- [FNV1a hash algorithm](https://github.com/robotea/amfnv1a.git)

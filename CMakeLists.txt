@@ -44,12 +44,6 @@ add_executable(TEST_AMLString src/AMLString.cpp test/LString/test_AMLString.cpp)
 target_link_libraries(TEST_AMLString gtest pthread AMLString)
 #add_custom_target(Tests ALL COMMAND TEST_AMLString)
 
-add_executable(TEST_AMFNV1a test/Hash/test_AMFNV1a.cpp)
-target_link_libraries(TEST_AMFNV1a gtest pthread)
-#add_custom_target(Tests ALL COMMAND TEST_AMFNV1a)
-
-
-
 # first we can indicate the documentation build as an option and set it to ON by default
 option(BUILD_DOC "Build documentation" OFF)
 # check if Doxygen is installed
